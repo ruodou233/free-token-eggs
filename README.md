@@ -6,7 +6,7 @@
 
 - 默认打开高价值入口：智谱 BigModel、SiliconFlow、Kimi API、扣子 Coze。
 - 区分 `API 通用`、`平台 API`、`Agent/App 内专用` 三类额度。
-- 支持把默认入口替换成你自己的邀请链接。
+- 自带作者公开邀请链接，并支持替换成你自己的邀请链接。
 - 打开注册页、活动页、推荐官页，让用户自己完成验证码、实名和 API key 操作。
 
 ## 安装
@@ -30,6 +30,8 @@ Use $free-token-eggs to open high-value Chinese AI platforms with free credits a
 ```
 
 ## 使用自己的邀请链接
+
+不传配置时，脚本会读取 `references/default_links.json` 中的作者默认邀请链接。若你不想使用作者链接，传入自己的配置即可覆盖。
 
 创建本地配置：
 

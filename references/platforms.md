@@ -40,7 +40,7 @@
 - key: `kimi`
 - type: `platform-api`
 - priority: `high`
-- 默认入口: `https://platform.kimi.com/console`
+- 默认入口: `https://platform.moonshot.cn/console`
 - 帮助页: `https://www.kimi.com/zh-cn/help/kimi-api/api-free-trial`
 - 领取形式：新用户 API 代金券，通常非邀请制。
 - 使用范围：Kimi API 控制台/API 消耗。
@@ -97,3 +97,13 @@
 3. 是否能给任意 Agent 调用。
 4. 是否需要实名或下载专属 App/Agent。
 5. 如果是邀请奖励，双方各得什么，是否有有效期。
+
+## 默认作者邀请链接
+
+开源发行版可以带作者的公开邀请链接，但必须明示，且允许使用者覆盖。当前默认作者链接见 `references/default_links.json`：
+
+- `bigmodel`: 智谱 BigModel 邀请链接。
+- `coze`: 扣子 Coze 邀请链接。
+- `siliconflow`: 暂无；用户登录国内站并申请推荐官后可自行配置。
+
+执行 Agent 向用户介绍时应说明：默认可能使用作者邀请链接；如果用户不想使用，传入自己的 `--config` 或删除对应默认链接即可。

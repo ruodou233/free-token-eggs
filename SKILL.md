@@ -20,7 +20,7 @@ description: |
    - `平台 API`：可在该平台控制台/API 使用，但不一定能迁移到别处。
    - `Agent/App 内专用`：只能在对应 App、Agent、IDE、工作台中消耗。
 4. **用户自己完成敏感步骤**：Agent 可以打开页面、填写非敏感公开信息、指路；验证码、实名、人脸、支付、API key 创建与复制由用户确认或输入。不要泄露 cookies、session、API keys。
-5. **优先用邀请链接**：若用户提供自己的链接，或本地配置里已有链接，打开时优先使用；没有则打开官方注册链接或活动页。
+5. **优先用邀请链接并披露**：发行版可带作者默认邀请链接；若用户提供自己的链接，必须优先使用用户链接覆盖默认链接。向用户说明哪些入口是作者邀请链接。
 
 ## 快速执行
 
@@ -45,6 +45,9 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 
 # 先预览，不打开浏览器
 python3 scripts/open_free_token_sites.py --dry-run
+
+# 限制最多打开 3 个标签页
+python3 scripts/open_free_token_sites.py --max 3
 ```
 
 配置格式：
@@ -56,6 +59,8 @@ python3 scripts/open_free_token_sites.py --dry-run
   "siliconflow": "https://cloud.siliconflow.cn/i/..."
 }
 ```
+
+不传 `--config` 时，脚本会读取 `references/default_links.json` 中的作者默认公开邀请链接；用户配置会覆盖同名 key。
 
 ## 默认高价值名单
 
