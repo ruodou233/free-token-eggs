@@ -1,0 +1,7 @@
+interface:
+  display_name: "免费Token领鸡蛋"
+  short_description: "打开可领 AI 免费额度和邀请奖励的平台入口"
+  default_prompt: "Use $free-token-eggs to open high-value Chinese AI platforms with free credits and guide me through registration."
+
+policy:
+  allow_implicit_invocation: true
