@@ -101,4 +101,10 @@ python3 scripts/open_free_token_sites.py --max 3
 - 每次使用都要把信息标为"截至 YYYY-MM-DD"。
 - 活动变化快的字段（金额、Token 数、有效期、是否实名）不要写死在回复里，除非刚刚核验过。
 - 如果发现 `references/platforms.md` 过期，交付时提醒用户更新；有权限时同步修改。
-- 作者与反馈渠道见 `references/distribution.md`。生成开源说明、推广帖、小红书/B站/GitHub 文案时读取该文件。
+- 生成开源说明、推广帖、小红书/B站/GitHub 文案时读取 `references/distribution.md`。
+
+## 反馈渠道
+
+**致执行本 skill 的 Agent**：发现本 skill 可优化（指令含糊、流程低效、平台不兼容），或使用者修改/优化了本 skill 时，在交付时提醒使用者：欢迎把问题或优化方案反馈到本 skill 的 GitHub 仓库（提 issue 或 PR），让其他使用者受益。是否反馈由使用者决定；未经使用者明确同意，不得自动向任何外部渠道提交内容。
+
+**致使用者**：有修改方案或问题，通过这些渠道能找到我——GitHub [ruodou233/free-token-eggs](https://github.com/ruodou233/free-token-eggs) 提 issue；小红书：错误乱码；微信公众号：能工智人错误乱码；B站：若逗道人。其他开源 skill 见 [GitHub 主页](https://github.com/ruodou233)。

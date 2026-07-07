@@ -57,9 +57,20 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 
 这个 Skill 不保存账号、密码、cookie、API key 或实名信息。验证码、实名、人脸验证、支付、API key 创建和复制应由用户自己完成。平台活动变化快，Agent 在打开前应重新核验官方页面。
 
-## 反馈
+## 反馈与作者
 
-- GitHub: [ruodou233/free-token-eggs](https://github.com/ruodou233/free-token-eggs)
+这个 skill 我长期维护。如果你有修改方案、发现问题、或者改出了更好的版本，欢迎通过以下任一渠道找到我：
+
+- GitHub：本仓库提 issue 或 PR
 - 小红书：错误乱码
 - 微信公众号：能工智人错误乱码
 - B站：若逗道人
+
+## 相关 Skill 推荐
+
+<!-- 本表由维护脚本生成，勿手工编辑 -->
+- [domain-explorer](https://github.com/ruodou233/domain-explorer)：速通新领域：四线并行调研，产出交互式知识地图
+- [claude-cache-keepalive](https://github.com/ruodou233/claude-cache-keepalive)：Claude 缓存保温：实测 TTL、按环境设计保温节拍，控制冷读成本
+- [improve-product-plan](https://github.com/ruodou233/improve-product-plan)：把模糊的产品想法梳理成可开发、可验收的 SPEC.md
+
+完整目录见 [GitHub 主页](https://github.com/ruodou233)。
