@@ -1,6 +1,6 @@
 # 免费 Token 领鸡蛋 Skill
 
-一个给 Codex / Claude Code 等 Agent 用的 Skill：帮助用户打开仍值得领取的中国 AI 免费额度、代金券、积分和邀请奖励入口，并区分这些额度到底能不能用于 API 或外部 Agent。
+国内 AI 平台的免费额度散落在各处，逐个找太累。这个 skill 帮你筛选值得注册的平台、自动打开注册和邀请链接，区分 API 通用额度和 App 内积分。太蠢的大模型不收录——吃点好的。
 
 ## 能做什么
 
@@ -69,8 +69,8 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 ## 相关 Skill 推荐
 
 <!-- 本表由维护脚本生成，勿手工编辑 -->
-- [domain-explorer](https://github.com/ruodou233/domain-explorer)：速通新领域：四线并行调研，产出交互式知识地图
-- [claude-cache-keepalive](https://github.com/ruodou233/claude-cache-keepalive)：Claude 缓存保温：实测 TTL、按环境设计保温节拍，控制冷读成本
-- [improve-product-plan](https://github.com/ruodou233/improve-product-plan)：把模糊的产品想法梳理成可开发、可验收的 SPEC.md
+- [domain-explorer](https://github.com/ruodou233/domain-explorer)：速通新领域的核心技巧：四线并行采集，几分钟建立全景认知
+- [claude-cache-keepalive](https://github.com/ruodou233/claude-cache-keepalive)：缓存保温策略，最高可压低 90% token 消耗，各种 Agent 通用
+- [improve-product-plan](https://github.com/ruodou233/improve-product-plan)：AI 产品经理帮你把模糊想法打磨成可落地的实现方案
 
 完整目录见 [GitHub 主页](https://github.com/ruodou233)。
