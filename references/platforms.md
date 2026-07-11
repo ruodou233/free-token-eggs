@@ -30,12 +30,14 @@
 - key: `siliconflow`
 - type: `api-general`
 - priority: `high`
-- 默认入口: `https://cloud.siliconflow.cn/me/campaigns/inviter`
+- 默认邀请入口: `https://cloud.siliconflow.cn/i/lFD2wYNZ`
+- 推荐官邀请码: `lFD2wYNZ`
+- 推荐官活动页: `https://cloud.siliconflow.cn/me/campaigns/inviter`
 - 国内控制台: `https://cloud.siliconflow.cn`
 - 国际控制台: `https://cloud.siliconflow.com`
-- 领取形式：新用户免费额度；推荐官计划邀请双方得通用代金券。
+- 领取形式：国内站推荐官计划中，受邀好友注册并完成实名认证后，邀请双方各得 16 元全平台通用代金券；活动有效期至 2026-12-31。国际站新用户注册奖励以登录页当期展示为准。
 - 使用范围：平台 API 推理、批量推理、微调等；Pro 模型通常可用，按官方账单规则核验。
-- 注册卡点：国内站需登录/实名后才能申请推荐官并生成专属链接；国际站和国内站活动可能不同。
+- 注册卡点：国内站受邀好友必须首次完成实名认证；国际站和国内站的活动、余额与代金券不互通。
 - 核验建议：打开推荐官页；若跳登录页，让用户登录后继续。
 
 ### Kimi API
@@ -107,6 +109,6 @@
 
 - `bigmodel`: 智谱 BigModel 邀请链接。
 - `coze`: 扣子 Coze 邀请链接。
-- `siliconflow`: 暂无；用户登录国内站并申请推荐官后可自行配置。
+- `siliconflow`: 作者的国内站推荐官邀请链接；受邀好友注册并完成实名认证后，双方按当期规则获得通用代金券。
 
 执行 Agent 向用户介绍时应说明：默认可能使用作者邀请链接；如果用户不想使用，传入自己的 `--config` 或删除对应默认链接即可。
