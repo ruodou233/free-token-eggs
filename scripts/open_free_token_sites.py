@@ -74,16 +74,19 @@ def read_json_links(path: Path) -> dict[str, str]:
     return {str(k): str(v) for k, v in data.items() if v}
 
 
-def load_links(path: str | None) -> dict[str, str]:
+def load_links(path: str | None) -> tuple[dict[str, str], set[str]]:
     default_path = Path(__file__).resolve().parents[1] / "references" / "default_links.json"
     links = read_json_links(default_path) if default_path.exists() else {}
+    author_link_keys = set(links)
     if not path:
-        return links
+        return links, author_link_keys
     p = Path(path).expanduser()
     if not p.exists():
         raise SystemExit(f"配置文件不存在: {p}")
-    links.update(read_json_links(p))
-    return links
+    custom_links = read_json_links(p)
+    links.update(custom_links)
+    author_link_keys.difference_update(custom_links)
+    return links, author_link_keys
 
 
 def open_url(url: str) -> None:
@@ -102,7 +105,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Print URLs without opening them.")
     args = parser.parse_args()
 
-    links = load_links(args.config)
+    links, author_link_keys = load_links(args.config)
     selected = []
     for site in SITES:
         if args.category != "all" and site["category"] != args.category:
@@ -120,8 +123,20 @@ def main() -> int:
         print(f"匹配到 {len(selected)} 个网站，只打开前 {args.max} 个；可用 --max 0 取消限制。")
         selected = selected[: args.max]
 
-    if any(site["key"] in links for site, _ in selected):
-        print("提示：部分入口使用了默认或自定义邀请链接；可用 --config 覆盖。")
+    selected_author_links = [site["name"] for site, _ in selected if site["key"] in author_link_keys]
+    selected_custom_links = [
+        site["name"]
+        for site, _ in selected
+        if site["key"] in links and site["key"] not in author_link_keys
+    ]
+    if selected_author_links:
+        print(
+            "提示：以下入口使用 Skill 作者的邀请链接，作者可能获得平台奖励："
+            + "、".join(selected_author_links)
+            + "。可用 --config 替换，或删除 default_links.json 中的对应条目。"
+        )
+    if selected_custom_links:
+        print("提示：以下入口使用了你的自定义链接：" + "、".join(selected_custom_links) + "。")
 
     for site, url in selected:
         print(f"{site['name']} [{site['key']}]")

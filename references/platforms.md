@@ -30,15 +30,15 @@
 - key: `siliconflow`
 - type: `api-general`
 - priority: `high`
-- 默认邀请入口: `https://cloud.siliconflow.cn/i/lFD2wYNZ`
-- 推荐官邀请码: `lFD2wYNZ`
-- 推荐官活动页: `https://cloud.siliconflow.cn/me/campaigns/inviter`
+- 好友注册入口: `https://cloud.siliconflow.cn/i/lFD2wYNZ`（供受邀新用户绑定邀请关系）
+- 推荐官邀请码: `lFD2wYNZ`（供手工输入或核验链接归属）
+- 推荐官管理页: `https://cloud.siliconflow.cn/me/campaigns/inviter`（供邀请人查看邀请码、邀请记录和奖励）
 - 国内控制台: `https://cloud.siliconflow.cn`
 - 国际控制台: `https://cloud.siliconflow.com`
-- 领取形式：国内站推荐官计划中，受邀好友注册并完成实名认证后，邀请双方各得 16 元全平台通用代金券；活动有效期至 2026-12-31。国际站新用户注册奖励以登录页当期展示为准。
+- 领取形式：截至 2026-07-11，国内站推荐官计划显示，受邀好友注册并首次完成实名认证后，邀请双方各得 16 元全平台通用代金券，活动有效期至 2026-12-31；具体奖励与期限以参与时官方页面为准。国际站新用户注册奖励以登录页当期展示为准。
 - 使用范围：平台 API 推理、批量推理、微调等；Pro 模型通常可用，按官方账单规则核验。
 - 注册卡点：国内站受邀好友必须首次完成实名认证；国际站和国内站的活动、余额与代金券不互通。
-- 核验建议：打开推荐官页；若跳登录页，让用户登录后继续。
+- 核验建议：打开好友注册入口，确认能正常跳转且邀请码未丢失；再打开推荐官管理页核验当期规则。邀请入口失效时回退管理页，不继续分发失效链接。
 
 ### Kimi API
 
