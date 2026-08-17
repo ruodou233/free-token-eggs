@@ -102,25 +102,46 @@ def main() -> int:
     parser.add_argument("--category", choices=["all", "api", "app"], default="all")
     parser.add_argument("--tier", choices=["high", "medium", "all"], default="high")
     parser.add_argument("--max", type=int, default=5, help="Maximum tabs to open; use 0 for no limit.")
+    parser.add_argument(
+        "--only",
+        help="Comma-separated site keys (e.g. kimi,coze). Intersects with --category/--tier; empty intersection exits 1.",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Print URLs without opening them.")
     args = parser.parse_args()
 
     links, author_link_keys = load_links(args.config)
+    only_keys = None
+    if args.only:
+        only_keys = [key.strip() for key in args.only.split(",") if key.strip()]
+        known = {site["key"] for site in SITES}
+        unknown = [key for key in only_keys if key not in known]
+        if unknown:
+            print(f"未知 key：{', '.join(unknown)}。合法 key：{', '.join(site['key'] for site in SITES)}")
+            return 1
+        only_keys = set(only_keys)
+
     selected = []
     for site in SITES:
         if args.category != "all" and site["category"] != args.category:
             continue
         if args.tier != "all" and site["tier"] != args.tier:
             continue
+        if only_keys is not None and site["key"] not in only_keys:
+            continue
         url = links.get(site["key"], site["url"])
         selected.append((site, url))
 
     if not selected:
-        print("没有匹配的网站。")
+        if only_keys is not None:
+            print("没有匹配的网站（--only 与 --category/--tier 交集为空）。")
+        else:
+            print("没有匹配的网站。")
         return 1
 
     if args.max > 0 and len(selected) > args.max:
+        skipped = selected[args.max :]
         print(f"匹配到 {len(selected)} 个网站，只打开前 {args.max} 个；可用 --max 0 取消限制。")
+        print("跳过：" + "、".join(f"{site['name']} [{site['key']}]" for site, _ in skipped))
         selected = selected[: args.max]
 
     selected_author_links = [site["name"] for site, _ in selected if site["key"] in author_link_keys]
