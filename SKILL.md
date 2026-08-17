@@ -25,13 +25,13 @@ description: |
 ## 快速执行
 
 1. 读取 `references/platforms.md`，按用户目标选择平台。
-2. 如用户要"打开网站/开始注册"，运行：
+2. 如用户要"打开网站/开始注册"，先预览再征得同意：
 
 ```bash
-python3 scripts/open_free_token_sites.py --tier high
+python3 scripts/open_free_token_sites.py --tier high --dry-run
 ```
 
-直接跑脚本只负责打开注册页，不替代当日核验；若未按「核心原则 1」核验就执行，需在输出中标注"未做当日核验"。
+把 dry-run 的站点名、URL、作者邀请提示转给用户。同意后再去掉 `--dry-run`。直接跑脚本只负责打开注册页，不替代当日核验；若未按「核心原则 1」核验就执行，需在输出中标注"未做当日核验"。
 
 常用参数：
 
@@ -41,6 +41,10 @@ python3 scripts/open_free_token_sites.py --category api
 
 # 只打开 Agent/App 内积分
 python3 scripts/open_free_token_sites.py --category app
+
+# 只开指定站点（与 --category/--tier 取交集）
+python3 scripts/open_free_token_sites.py --only kimi
+python3 scripts/open_free_token_sites.py --only kimi,coze
 
 # 使用用户自己的邀请链接配置
 python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
