@@ -58,8 +58,7 @@ python3 scripts/open_free_token_sites.py --max 3
 {
   "bigmodel": "https://www.bigmodel.cn/invite?icode=...",
   "coze": "https://www.coze.cn/studio?invite_code=...",
-  "siliconflow": "https://cloud.siliconflow.cn/i/...",
-  "qoder": "https://qoder.com.cn/referral?referral_code=..."
+  "siliconflow": "https://cloud.siliconflow.cn/i/..."
 }
 ```
 
@@ -75,7 +74,6 @@ python3 scripts/open_free_token_sites.py --max 3
 | SiliconFlow | API 通用 | 值得。新用户额度 + 推荐官通用代金券，可用于 API/推理/微调。 |
 | Kimi API | API 通用/平台 API | 值得注册自领；通常不是邀请制，主要是新用户 API 代金券。 |
 | 扣子 Coze | Agent/App 内专用 | 值得领积分，但不是通用 API key；适合扣子 Agent、扣子编程、工具调用等场景。 |
-| Qoder CN | Agent/App 内专用 | 限时活动截至 2026-09-03；当天核验仍有效时再打开。须使用客户端或插件领取，不是通用 API key。 |
 | 阿里百炼 / ModelScope | 平台 API | 值得核验后打开；活动经常变，必须先查官方页面。 |
 
 当前列表默认剔除了近期榜单表现较弱或免费额度实用性低的平台（如百度的当期活动）。它们不是被永久拉黑；只有在近期榜单或官方活动证明其模型质量和免费额度确实值得注册时，才会重新加入。

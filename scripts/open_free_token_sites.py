@@ -49,14 +49,6 @@ SITES = [
         "note": "扣子积分/邀请奖励；App/Agent 内专用，不是通用 API key。",
     },
     {
-        "key": "qoder",
-        "name": "Qoder CN",
-        "category": "app",
-        "tier": "high",
-        "url": "https://qoder.com.cn/referral?referral_code=nAHyOuDeWhequPagK6Z2MeArPRAdX6fi",
-        "note": "AI 编程工具；邀请积分与 Qwen3.8-Max 次数仅限端内使用。",
-    },
-    {
         "key": "dashscope",
         "name": "阿里百炼",
         "category": "api",

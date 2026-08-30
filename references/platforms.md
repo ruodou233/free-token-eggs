@@ -1,7 +1,7 @@
 # 免费 Token 平台清单
 
 > **时效声明**：以下平台额度、邀请奖励与活动信息随时可能调整或下线。
-> 本轮仅核验了 Qoder CN 与 WorkBuddy（2026-08-31）；其他条目沿用各自标注的核验日期或视为未做当日核验。领取前请以各平台当期活动页为准。
+> 本轮仅核验了 Qoder CN（2026-08-31）；WorkBuddy 同日活动已到期，不保留条目。其他条目沿用各自标注的核验日期或视为未做当日核验。领取前请以各平台当期活动页为准。
 
 > 用途：执行 `$free-token-eggs` 时按需读取。信息会过期；每次打开前必须重新核验官方页面或控制台。
 
@@ -65,29 +65,18 @@
 - 使用范围：扣子内任务、扣子编程、内置集成、大模型 Token、工具调用、音视频等；不是通用 API key。
 - 注册卡点：登录后在积分/订阅管理/活动入口查看；邀请链接可能需要调用或点击个人邀请码入口生成。
 
-### Qoder CN
+## 中优先级
+
+### Qoder CN（限时活动候选）
 
 - key: `qoder`
 - type: `app-only`
-- priority: `high`
-- 默认入口/邀请入口: `https://qoder.com.cn/referral?referral_code=nAHyOuDeWhequPagK6Z2MeArPRAdX6fi`
-- 规则页: `https://docs.qoder.cn/events/qwen-max`
-- 领取形式：截至 2026-08-31，中国站一周年 × Qwen3.8-Max 活动期内，受邀新用户可领 300 积分 + 800 次 Qwen3.8-Max 免费调用；邀请人每成功邀请一位新用户得 400 积分。邀请期至 2026-09-03 23:59（UTC+8）；免费次数用至 2026-09-30。具体以官方活动页为准。
-- 使用范围：Qoder Desktop / JetBrains 插件 / CLI / QoderWake 等端内积分与模型调用，不是通用 API key。
-- 注册卡点：须为首次注册；须通过专属邀请链接；注册后 14 天内且不晚于活动结束，在 Desktop/插件/CLI/QoderWake 完成至少 1 次对话并消耗 1 积分才算邀请成功。Mobile/Cloud Agents 消耗不计。需下载客户端。国际站不参与。
-- 核验建议：2026-08-31 直连邀请链接返回 HTTP 200，活动条件由官方规则页核验；邀请码归属仍需登录后确认。过期后回退普通注册页，不继续分发失效邀请口径。
-
-## 中优先级
-
-### WorkBuddy（临时活动候选）
-
-- key: `workbuddy`
-- type: `app-only`
 - priority: `medium`
-- 官方活动页: `https://www.workbuddy.cn/events/invite/`
-- 领取形式：官方页面在 2026-08-31 核验时仍显示邀请积分活动，但活动也在当天截止，因此不放入默认打开列表。
-- 使用范围：WorkBuddy 内积分，不是通用 API key。
-- 核验建议：仅在官方活动页显示新期限或仍可领取时打开；否则使用普通产品页，不介绍过期奖励。
+- 候选邀请入口: `https://qoder.com.cn/referral?referral_code=nAHyOuDeWhequPagK6Z2MeArPRAdX6fi`
+- 规则页: `https://docs.qoder.cn/events/qwen-max`
+- 领取形式：截至 2026-08-31，中国站一周年 × Qwen3.8-Max 活动期内，受邀新用户可领 300 积分 + 800 次 Qwen3.8-Max 免费调用；邀请期至 2026-09-03 23:59（UTC+8），免费次数用至 2026-09-30。
+- 使用范围：Qoder Desktop / JetBrains 插件 / CLI / QoderWake 等端内积分与模型调用，不是通用 API key。
+- 核验建议：不进入稳定默认入口；用户明确询问 Qoder 活动时，先核验规则页仍有效，再按需打开候选链接。过期后只保留日期化记录，不介绍为可领取活动。
 
 ### 阿里百炼 / Qwen
 
@@ -132,6 +121,5 @@
 - `bigmodel`: 智谱 BigModel 邀请链接。
 - `coze`: 扣子 Coze 邀请链接。
 - `siliconflow`: 作者的国内站推荐官邀请链接；受邀好友注册并完成实名认证后，双方按当期规则获得通用代金券。
-- `qoder`: Qoder CN 中国站邀请链接；受邀新用户按当期规则领取积分与模型次数，邀请人按成功邀请获得积分。
 
 执行 Agent 向用户介绍时应说明：默认可能使用作者邀请链接；如果用户不想使用，传入自己的 `--config` 或删除对应默认链接即可。

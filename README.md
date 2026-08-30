@@ -4,7 +4,7 @@
 
 ## 能做什么
 
-- 默认打开高价值入口：智谱 BigModel、SiliconFlow、Kimi API、扣子 Coze、Qoder CN。
+- 默认打开高价值入口：智谱 BigModel、SiliconFlow、Kimi API、扣子 Coze。
 - 区分 `API 通用`、`平台 API`、`Agent/App 内专用` 三类额度。
 - 自带作者公开邀请链接，并支持替换成你自己的邀请链接。
 - 打开注册页、活动页、推荐官页，让用户自己完成验证码、实名和 API key 操作。
@@ -43,8 +43,7 @@ Use $free-token-eggs to open high-value Chinese AI platforms with free credits a
 {
   "bigmodel": "https://www.bigmodel.cn/invite?icode=...",
   "coze": "https://www.coze.cn/studio?invite_code=...",
-  "siliconflow": "https://cloud.siliconflow.cn/i/...",
-  "qoder": "https://qoder.com.cn/referral?referral_code=..."
+  "siliconflow": "https://cloud.siliconflow.cn/i/..."
 }
 ```
 
