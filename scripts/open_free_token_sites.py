@@ -21,8 +21,8 @@ SITES = [
         "name": "智谱 BigModel",
         "category": "api",
         "tier": "high",
-        "url": "https://www.bigmodel.cn/console/overview?showUppop=true",
-        "note": "API/控制台资源包；如有用户邀请链接则优先打开。",
+        "url": "https://open.bigmodel.cn/overview",
+        "note": "智谱开放平台 API 额度入口。",
     },
     {
         "key": "siliconflow",
@@ -37,8 +37,8 @@ SITES = [
         "name": "Kimi API",
         "category": "api",
         "tier": "high",
-        "url": "https://platform.moonshot.cn/console",
-        "note": "新用户 API 代金券；通常没有个人邀请奖励。",
+        "url": "https://platform.kimi.com/console",
+        "note": "Kimi API 免费试用入口。",
     },
     {
         "key": "coze",
@@ -46,23 +46,31 @@ SITES = [
         "category": "app",
         "tier": "high",
         "url": "https://www.coze.cn/studio",
-        "note": "扣子积分/邀请奖励；App/Agent 内专用，不是通用 API key。",
+        "note": "扣子内新用户与每日登录积分。",
     },
     {
         "key": "dashscope",
         "name": "阿里百炼",
         "category": "api",
-        "tier": "medium",
+        "tier": "high",
         "url": "https://bailian.console.aliyun.com/",
-        "note": "中优先级；活动常变，打开前应先核验。",
+        "note": "百炼新人模型免费额度入口。",
     },
     {
         "key": "modelscope",
         "name": "ModelScope",
         "category": "api",
-        "tier": "medium",
+        "tier": "high",
         "url": "https://www.modelscope.cn/my/myaccesstoken",
-        "note": "中优先级；活动常变，打开前应先核验。",
+        "note": "ModelScope API Inference 免费调用入口。",
+    },
+    {
+        "key": "qoder",
+        "name": "Qoder CN",
+        "category": "app",
+        "tier": "medium",
+        "url": "https://qoder.cn/",
+        "note": "个人体验版与 300 Credits 入口。",
     },
 ]
 
@@ -101,7 +109,7 @@ def main() -> int:
     parser.add_argument("--config", help="JSON file mapping site keys to referral URLs.")
     parser.add_argument("--category", choices=["all", "api", "app"], default="all")
     parser.add_argument("--tier", choices=["high", "medium", "all"], default="high")
-    parser.add_argument("--max", type=int, default=5, help="Maximum tabs to open; use 0 for no limit.")
+    parser.add_argument("--max", type=int, default=7, help="Maximum tabs to open; use 0 for no limit.")
     parser.add_argument("--dry-run", action="store_true", help="Print URLs without opening them.")
     args = parser.parse_args()
 

@@ -1,7 +1,7 @@
 interface:
   display_name: "免费Token领鸡蛋"
-  short_description: "打开可领 AI 免费额度和邀请奖励的平台入口"
-  default_prompt: "使用 $free-token-eggs 打开值得领取免费 AI Token/额度的平台入口，并引导我自己完成注册。"
+  short_description: "核验并打开当前可领的 AI 免费额度入口"
+  default_prompt: "使用 $free-token-eggs 核验并打开当前值得领取的 AI 免费 API 额度或应用积分入口。"
 
 policy:
   allow_implicit_invocation: false
