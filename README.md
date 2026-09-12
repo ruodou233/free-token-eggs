@@ -1,4 +1,6 @@
-# 免费 Token 领鸡蛋 Skill
+# 免费 AI 额度领鸡蛋｜Free LLM API Credits & Trials
+
+Find worthwhile free LLM API credits and AI trials, with eligibility, expiry dates, and claim links checked.
 
 免费额度到处都是，找半天、领一圈，模型还不好用？这个 skill 帮你挑值得领的免费 AI token，查清条件、找到入口。太蠢的大模型不收录，吃点好的。
 
