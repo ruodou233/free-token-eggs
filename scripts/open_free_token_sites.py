@@ -70,7 +70,7 @@ SITES = [
         "category": "app",
         "tier": "medium",
         "url": "https://qoder.cn/",
-        "note": "个人体验版与 300 Credits 入口。",
+        "note": "个人体验版入口。",
     },
 ]
 
@@ -109,7 +109,6 @@ def main() -> int:
     parser.add_argument("--config", help="JSON file mapping site keys to referral URLs.")
     parser.add_argument("--category", choices=["all", "api", "app"], default="all")
     parser.add_argument("--tier", choices=["high", "medium", "all"], default="high")
-    parser.add_argument("--max", type=int, default=7, help="Maximum tabs to open; use 0 for no limit.")
     parser.add_argument("--dry-run", action="store_true", help="Print URLs without opening them.")
     args = parser.parse_args()
 
@@ -126,10 +125,6 @@ def main() -> int:
     if not selected:
         print("没有匹配的网站。")
         return 1
-
-    if args.max > 0 and len(selected) > args.max:
-        print(f"匹配到 {len(selected)} 个网站，只打开前 {args.max} 个；可用 --max 0 取消限制。")
-        selected = selected[: args.max]
 
     selected_author_links = [site["name"] for site, _ in selected if site["key"] in author_link_keys]
     selected_custom_links = [

@@ -33,9 +33,8 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 
 ## 额度类型
 
-- **API 通用**：可供脚本或外部 Agent 调用。
-- **平台 API**：在该平台的模型服务中调用。
-- **应用内专用**：只能在对应 App、IDE 或工作台中使用。
+- **API 通用**（清单 `api-general`，脚本 `--category api`）：拿到 key 后可在脚本、外部 Agent 或 IDE 里调用该平台的模型服务。
+- **应用内专用**（清单 `app-only`，脚本 `--category app`）：只能在对应 App、IDE 或工作台中使用。
 
 ## 交付
 
