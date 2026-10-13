@@ -72,6 +72,22 @@ SITES = [
         "url": "https://qoder.cn/",
         "note": "个人体验版入口。",
     },
+    {
+        "key": "doubao",
+        "name": "火山方舟 / 豆包",
+        "category": "api",
+        "tier": "high",
+        "url": "https://console.volcengine.com/ark",
+        "note": "注册实名后每日自动发 200 万 Tokens。",
+    },
+    {
+        "key": "deepseek",
+        "name": "DeepSeek",
+        "category": "api",
+        "tier": "high",
+        "url": "https://platform.deepseek.com/",
+        "note": "新账号送 500 万 Tokens（30 天），网页/App 长期免费。",
+    },
 ]
 
 
