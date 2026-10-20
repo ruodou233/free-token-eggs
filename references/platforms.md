@@ -2,7 +2,7 @@
 
 > **它是什么**：用于判断现在有哪些 AI 免费 API 额度或应用积分值得领取的时效清单，不是社区信号库。
 > **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
-> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；新增 DeepSeek 一家（豆包经 2026-10 榜单核验未达 DeepSeek 同级，其余候选平台亦弱于 DeepSeek，均按口碑门槛不收录）。
+> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；国内新增 DeepSeek 一家（豆包等经榜单核验未达 DeepSeek 同级，不收录）；新增「海外平台」分区（Gemini / OpenRouter / Groq / NVIDIA NIM / Cloudflare / Mistral / Cerebras，模型质量≥DeepSeek 同级）。
 
 ## 字段说明
 
@@ -102,6 +102,82 @@
 - 当前免费内容：个人体验版含 2 周 Pro 试用和 300 Credits。
 - 🟢 新增（2026-10）：2026-09-18 起个人用户每日可在桌面端主动领取 100 通用 Credits（30 天有效，可跨天保留）；Qwen3.8-Flash 调用系数 0.0× 不耗 Credits。
 - 使用范围：Qoder CN IDE、JetBrains、QoderWork、CLI、QoderWake 和 Mobile 等端内能力。
+
+## 海外平台
+
+> 2026-10-20 核验。以下海外平台可免费领 API key / 额度，模型质量普遍在 DeepSeek 之上或同级，符合收录门槛。国内访问可能需代理；注意各平台免费层数据政策（部分会用提示词训练）。默认优先级偏低，需要时再打开。
+
+### Google Gemini（AI Studio）
+
+- key: `gemini`
+- type: `api-general`
+- priority: `high`
+- 默认入口: `https://aistudio.google.com/`
+- 官方说明: `https://ai.google.dev/gemini-api/docs/rate-limits`
+- 当前免费内容：免费层覆盖 Gemini 3.x Flash / 2.5 Flash / Gemma 4 等前沿模型，无需信用卡；约 10 RPM / ~1500 RPD（以 AI Studio 控制台显示为准）。
+- 使用范围：Gemini API（原生 + OpenAI 兼容端点），可接入脚本 / 外部 Agent / IDE。
+- 卡点：免费层提示词可能被用于改进 Google 产品（敏感数据慎用）；国内访问可能需代理；超限即 429、无自动扣费。
+
+### OpenRouter
+
+- key: `openrouter`
+- type: `api-general`
+- priority: `high`
+- 默认入口: `https://openrouter.ai/`
+- 官方说明: `https://openrouter.ai/docs`
+- 当前免费内容：17–25+ 个 `:free` 模型 + `openrouter/free` 自动路由，一个 key 全用；免费档 50 请求/天（20 RPM），一次性充值 $10 后升到 1000/天。
+- 使用范围：聚合网关，OpenAI 兼容，覆盖多家前沿 / 开源模型。
+- 卡点：免费模型名单每周轮换；单宿主无故障转移；注意上游数据政策（部分宿主会用提示词训练）。
+
+### Groq
+
+- key: `groq`
+- type: `api-general`
+- priority: `medium`
+- 默认入口: `https://console.groq.com/`
+- 当前免费内容：免费层，推理速度极快，托管 Llama / Qwen / DeepSeek-R1 / gpt-oss 等；无需信用卡。
+- 使用范围：OpenAI 兼容 API。
+- 卡点：以开源权重模型为主；2026 年每日上限有下调，以控制台为准。
+
+### NVIDIA NIM（build.nvidia.com）
+
+- key: `nvidia-nim`
+- type: `api-general`
+- priority: `medium`
+- 默认入口: `https://build.nvidia.com/`
+- 当前免费内容：注册赠 1000 推理 Credits（企业邮箱可到 5000），40 RPM，托管 100+ 模型（DeepSeek / Qwen / Kimi / GLM / Gemma / Nemotron）；无需信用卡。
+- 使用范围：OpenAI 兼容端点 `integrate.api.nvidia.com/v1`。
+- 卡点：Credits 为消耗型、不自动刷新；需手机验证。
+
+### Cloudflare Workers AI
+
+- key: `cloudflare`
+- type: `api-general`
+- priority: `medium`
+- 默认入口: `https://developers.cloudflare.com/workers-ai/`
+- 当前免费内容：每日 10,000 Neurons 免费额度，托管 Llama / gpt-oss 等多款开源模型；官方承诺不用免费层数据训练。
+- 使用范围：Workers AI 绑定 + OpenAI 兼容端点。
+- 卡点：按 Neurons 计费需换算；更适合隐私敏感场景。
+
+### Mistral（La Plateforme）
+
+- key: `mistral`
+- type: `api-general`
+- priority: `medium`
+- 默认入口: `https://console.mistral.ai/`
+- 当前免费内容：Experiment 层免费用整个模型目录（含 Mistral Large / Codestral），无公布配额（约 1 req/s/key）；可选零留存。
+- 使用范围：Mistral API，欧洲托管强模型。
+- 卡点：需手机验证；配额不透明，触顶才知道。
+
+### Cerebras
+
+- key: `cerebras`
+- type: `api-general`
+- priority: `medium`
+- 默认入口: `https://cloud.cerebras.ai/`
+- 当前免费内容：免费层，推理超快，托管 Llama / Qwen / gpt-oss 等；无需信用卡。
+- 使用范围：OpenAI 兼容 API。
+- 卡点：模型目录与限额以控制台为准。
 
 ## 作者邀请链接
 
