@@ -2,7 +2,7 @@
 
 > **它是什么**：用于判断现在有哪些 AI 免费 API 额度或应用积分值得领取的时效清单，不是社区信号库。
 > **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
-> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；国内新增 DeepSeek 一家（豆包等经榜单核验未达 DeepSeek 同级，不收录）；新增「海外平台」分区（Gemini / OpenRouter / Groq / NVIDIA NIM / Cloudflare / Mistral / Cerebras，模型质量≥DeepSeek 同级）。
+> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；国内新增 DeepSeek 一家（豆包等经榜单核验未达 DeepSeek V4.1 同级，不收录）；新增「海外平台」分区（按 DeepSeek V4.1 同级严标，仅收录 Gemini / NVIDIA NIM / Kiro；OpenRouter / Groq / Cloudflare / Mistral / Cerebras 免费档模型弱于 V4.1，不收录）。
 
 ## 字段说明
 
@@ -12,8 +12,9 @@
 
 ## 收录门槛
 
-- 以最新权威榜单（SuperCLUE 综合榜 / LMArena 文本榜）为准：模型口碑须达到 DeepSeek 同级（第一梯队）才收录。
-- 2026-10 核验结论：豆包 Seed 2.1 Pro 在 SuperCLUE 综合榜约第 5（≈DeepSeek V4-Pro/Flash 档，低于 DeepSeek 旗舰 V4.1-Flash / V4-Pro-0813），且在 LMArena 文本榜未进入第一梯队，故不收录；百度文心、腾讯混元、商汤、讯飞星火等亦低于该门槛，不收录。
+- 以最新权威榜单（SuperCLUE 综合榜 / LMArena 文本榜）为准：模型口碑须达到 **DeepSeek V4.1 同级**（第一梯队）才收录。
+- 2026-10 核验结论（国内）：豆包 Seed 2.1 Pro 在 SuperCLUE 综合榜约第 5（≈DeepSeek V4-Pro/Flash 档，低于 DeepSeek 旗舰 V4.1-Flash / V4-Pro-0813），且在 LMArena 文本榜未进入第一梯队，故不收录；百度文心、腾讯混元、商汤、讯飞星火等亦低于该门槛，不收录。
+- 2026-10 核验结论（海外）：OpenRouter / Groq / Cloudflare / Mistral / Cerebras 的免费档只到中档开源模型（低于 V4.1），不收录；仅收录免费档能给到 V4.1 档或更强模型的 Gemini / NVIDIA NIM / Kiro。
 - 平台聚合型（SiliconFlow、ModelScope）自身不产模型，但托管多家第一梯队开源模型，仍保留。
 
 ## 高优先级
@@ -49,7 +50,7 @@
 - 默认入口: `https://platform.kimi.com/console`
 - 官方说明: `https://www.kimi.com/zh-cn/help/kimi-api/api-free-trial`
 - 当前免费内容：中国大陆手机号新用户自动获得 15 元 API 代金券（2026-10 核验仍有效）。
-- 使用范围：Kimi API，可接入脚本、外部 Agent 和 IDE。
+- 使用范围：Kimi API，可接入脚本 / 外部 Agent / IDE。
 - 有效期：自发放起 3 个月。
 - 注：15 元代金券不可用于体验最新旗舰 Kimi K3，需充值解锁。
 
@@ -105,7 +106,7 @@
 
 ## 海外平台
 
-> 2026-10-20 核验。以下海外平台可免费领 API key / 额度，模型质量普遍在 DeepSeek 之上或同级，符合收录门槛。国内访问可能需代理；注意各平台免费层数据政策（部分会用提示词训练）。默认优先级偏低，需要时再打开。
+> 2026-10-20 核验。按 DeepSeek V4.1 同级严标，仅收录免费档能给到 V4.1 档或更强模型的平台。国内访问可能需代理；注意各平台免费层数据政策（部分会用提示词训练）。
 
 ### Google Gemini（AI Studio）
 
@@ -118,66 +119,27 @@
 - 使用范围：Gemini API（原生 + OpenAI 兼容端点），可接入脚本 / 外部 Agent / IDE。
 - 卡点：免费层提示词可能被用于改进 Google 产品（敏感数据慎用）；国内访问可能需代理；超限即 429、无自动扣费。
 
-### OpenRouter
-
-- key: `openrouter`
-- type: `api-general`
-- priority: `high`
-- 默认入口: `https://openrouter.ai/`
-- 官方说明: `https://openrouter.ai/docs`
-- 当前免费内容：17–25+ 个 `:free` 模型 + `openrouter/free` 自动路由，一个 key 全用；免费档 50 请求/天（20 RPM），一次性充值 $10 后升到 1000/天。
-- 使用范围：聚合网关，OpenAI 兼容，覆盖多家前沿 / 开源模型。
-- 卡点：免费模型名单每周轮换；单宿主无故障转移；注意上游数据政策（部分宿主会用提示词训练）。
-
-### Groq
-
-- key: `groq`
-- type: `api-general`
-- priority: `medium`
-- 默认入口: `https://console.groq.com/`
-- 当前免费内容：免费层，推理速度极快，托管 Llama / Qwen / DeepSeek-R1 / gpt-oss 等；无需信用卡。
-- 使用范围：OpenAI 兼容 API。
-- 卡点：以开源权重模型为主；2026 年每日上限有下调，以控制台为准。
-
 ### NVIDIA NIM（build.nvidia.com）
 
 - key: `nvidia-nim`
 - type: `api-general`
 - priority: `medium`
 - 默认入口: `https://build.nvidia.com/`
-- 当前免费内容：注册赠 1000 推理 Credits（企业邮箱可到 5000），40 RPM，托管 100+ 模型（DeepSeek / Qwen / Kimi / GLM / Gemma / Nemotron）；无需信用卡。
+- 官方说明: `https://build.nvidia.com/`
+- 当前免费内容：注册赠 1000 推理 Credits（企业邮箱可到 5000），40 RPM；托管 DeepSeek / GLM-5.3 / Qwen3.8 / Kimi 等第一梯队模型（及 Gemma / Nemotron），可用免费 Credits 调用。
 - 使用范围：OpenAI 兼容端点 `integrate.api.nvidia.com/v1`。
 - 卡点：Credits 为消耗型、不自动刷新；需手机验证。
 
-### Cloudflare Workers AI
+### Amazon Kiro
 
-- key: `cloudflare`
-- type: `api-general`
+- key: `kiro`
+- type: `app-only`
 - priority: `medium`
-- 默认入口: `https://developers.cloudflare.com/workers-ai/`
-- 当前免费内容：每日 10,000 Neurons 免费额度，托管 Llama / gpt-oss 等多款开源模型；官方承诺不用免费层数据训练。
-- 使用范围：Workers AI 绑定 + OpenAI 兼容端点。
-- 卡点：按 Neurons 计费需换算；更适合隐私敏感场景。
-
-### Mistral（La Plateforme）
-
-- key: `mistral`
-- type: `api-general`
-- priority: `medium`
-- 默认入口: `https://console.mistral.ai/`
-- 当前免费内容：Experiment 层免费用整个模型目录（含 Mistral Large / Codestral），无公布配额（约 1 req/s/key）；可选零留存。
-- 使用范围：Mistral API，欧洲托管强模型。
-- 卡点：需手机验证；配额不透明，触顶才知道。
-
-### Cerebras
-
-- key: `cerebras`
-- type: `api-general`
-- priority: `medium`
-- 默认入口: `https://cloud.cerebras.ai/`
-- 当前免费内容：免费层，推理超快，托管 Llama / Qwen / gpt-oss 等；无需信用卡。
-- 使用范围：OpenAI 兼容 API。
-- 卡点：模型目录与限额以控制台为准。
+- 默认入口: `https://kiro.dev/`
+- 官方说明: `https://kiro.dev/pricing`
+- 当前免费内容：免费档 $0/月含 50 Credits/月（非试用、无需卡）；社交 / AWS Builder ID 首登再送 500 Credits。免费档可用 Claude Sonnet 4.5（前沿，>V4.1）+ 开源模型（Qwen3 Coder Next / DeepSeek 3.2 / MiniMax M2.1）；Opus 5 / GPT-5.6 等旗舰需付费。
+- 使用范围：Kiro IDE / CLI / 网页 / 移动端的 spec 驱动 agentic 编程；app-only，非通用 API key。
+- 卡点：免费档仅 50 Credits/月，量很小；旗舰模型锁付费档；GovCloud 无免费档。
 
 ## 作者邀请链接
 
