@@ -1,8 +1,8 @@
 # 免费 Token 平台当前清单
 
 > **它是什么**：用于判断现在有哪些 AI 免费 API 额度或应用积分值得领取的时效清单，不是社区信号库。
-> **本轮核验**：2026-10-13。额度、活动和有效期执行时从所列官方页面再看一遍。
-> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；新增豆包、DeepSeek 两家（其余候选平台模型弱于 DeepSeek，按口碑门槛不收录）。
+> **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
+> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；新增 DeepSeek 一家（豆包经 2026-10 榜单核验未达 DeepSeek 同级，其余候选平台亦弱于 DeepSeek，均按口碑门槛不收录）。
 
 ## 字段说明
 
@@ -12,7 +12,8 @@
 
 ## 收录门槛
 
-- 模型口碑须达到 DeepSeek 同级（第一梯队）才收录；明显弱于 DeepSeek 的平台（如百度文心、腾讯混元、商汤、讯飞星火等）默认不收，除非其近期榜单或官方活动证明已进入第一梯队。
+- 以最新权威榜单（SuperCLUE 综合榜 / LMArena 文本榜）为准：模型口碑须达到 DeepSeek 同级（第一梯队）才收录。
+- 2026-10 核验结论：豆包 Seed 2.1 Pro 在 SuperCLUE 综合榜约第 5（≈DeepSeek V4-Pro/Flash 档，低于 DeepSeek 旗舰 V4.1-Flash / V4-Pro-0813），且在 LMArena 文本榜未进入第一梯队，故不收录；百度文心、腾讯混元、商汤、讯飞星火等亦低于该门槛，不收录。
 - 平台聚合型（SiliconFlow、ModelScope）自身不产模型，但托管多家第一梯队开源模型，仍保留。
 
 ## 高优先级
@@ -47,7 +48,7 @@
 - type: `api-general`
 - 默认入口: `https://platform.kimi.com/console`
 - 官方说明: `https://www.kimi.com/zh-cn/help/kimi-api/api-free-trial`
-- 当前免费内容：中国大陆手机号新用户自动获得 15 元 API 代金券（2026-10-13 核验仍有效）。
+- 当前免费内容：中国大陆手机号新用户自动获得 15 元 API 代金券（2026-10 核验仍有效）。
 - 使用范围：Kimi API，可接入脚本、外部 Agent 和 IDE。
 - 有效期：自发放起 3 个月。
 - 注：15 元代金券不可用于体验最新旗舰 Kimi K3，需充值解锁。
@@ -80,16 +81,6 @@
 - 当前免费内容：API Inference 免费；每账号每日总计 2000 次，单模型每日上限最高 500 次（DeepSeek-R1/V3 等大模型限 100 次）。
 - 使用范围：带 API Inference 标识的开源模型。
 - 注：需绑定阿里云账号并完成实名。
-
-### 火山方舟 / 豆包（Doubao）
-
-- key: `doubao`
-- type: `api-general`
-- 默认入口: `https://console.volcengine.com/ark`
-- 官方说明: `https://www.volcengine.com/docs/82379/`
-- 当前免费内容：注册并实名后，每天自动发放 200 万 Tokens，单模型另给 50 万基础额度；豆包 Seed 1.6 / 2.0 系列可用。
-- 使用范围：火山引擎方舟 API（兼容 OpenAI 格式）。
-- 有效期：按天自动刷新，长期有效。
 
 ### DeepSeek
 
