@@ -78,7 +78,7 @@ SITES = [
         "category": "api",
         "tier": "high",
         "url": "https://platform.deepseek.com/",
-        "note": "新账号送 500 万 Tokens（30 天），网页/App 长期免费。",
+        "note": "DeepSeek 开放平台入口。",
     },
     {
         "key": "gemini",
@@ -86,7 +86,7 @@ SITES = [
         "category": "api",
         "tier": "high",
         "url": "https://aistudio.google.com/",
-        "note": "免费层覆盖 Gemini 3.x Flash 等前沿模型，无需信用卡。",
+        "note": "Gemini 免费层入口，无需信用卡。",
     },
     {
         "key": "nvidia-nim",
@@ -94,7 +94,7 @@ SITES = [
         "category": "api",
         "tier": "medium",
         "url": "https://build.nvidia.com/",
-        "note": "注册赠 1000 Credits，托管 DeepSeek/GLM/Qwen/Kimi 等第一梯队模型；需手机验证。",
+        "note": "托管 DeepSeek/GLM/Qwen/Kimi 的聚合入口；需手机验证。",
     },
     {
         "key": "kiro",
@@ -102,7 +102,7 @@ SITES = [
         "category": "app",
         "tier": "medium",
         "url": "https://kiro.dev/",
-        "note": "免费档 50 credits/月（无需卡），含 Claude Sonnet 4.5（前沿）；app-only IDE。",
+        "note": "spec 驱动 agentic IDE，可用 Claude Sonnet 4.5 等；app-only。",
     },
 ]
 

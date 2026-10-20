@@ -2,19 +2,19 @@
 
 > **它是什么**：用于判断现在有哪些 AI 免费 API 额度或应用积分值得领取的时效清单，不是社区信号库。
 > **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
-> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消（仅 embedding/语音/OCR/翻译/Kolors 免费）；Qoder CN 新增每日可领 100 通用 Credits；国内新增 DeepSeek 一家（豆包等经榜单核验未达 DeepSeek V4.1 同级，不收录）；新增「海外平台」分区（按 DeepSeek V4.1 同级严标，仅收录 Gemini / NVIDIA NIM / Kiro；OpenRouter / Groq / Cloudflare / Mistral / Cerebras 免费档模型弱于 V4.1，不收录）。
+> **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消；Qoder CN 新增每日可领 100 通用 Credits；新增 DeepSeek 与海外平台 Gemini / NVIDIA NIM / Kiro。
 
 ## 字段说明
 
 - `type`: `api-general` 可用于 API/外部 Agent；`app-only` 专属 App/Agent 内消耗。
-- `priority`: `high` 默认打开；`medium` 用户要求扩展时再打开。
+- 优先级由所属章节决定：高优先级默认打开，中优先级用户要求扩展时再打开。
+- 标题带「· 海外」的是海外平台（国内访问可能需代理，注意其免费层数据政策），未标注的为国内平台。
 - `replaceable_link_key`: 用户可在 `~/.free-token-eggs-links.json` 中用该 key 替换为自己的邀请链接。
 
 ## 收录门槛
 
 - 以最新权威榜单（SuperCLUE 综合榜 / LMArena 文本榜）为准：模型口碑须达到 **DeepSeek V4.1 同级**（第一梯队）才收录。
-- 2026-10 核验结论（国内）：豆包 Seed 2.1 Pro 在 SuperCLUE 综合榜约第 5（≈DeepSeek V4-Pro/Flash 档，低于 DeepSeek 旗舰 V4.1-Flash / V4-Pro-0813），且在 LMArena 文本榜未进入第一梯队，故不收录；百度文心、腾讯混元、商汤、讯飞星火等亦低于该门槛，不收录。
-- 2026-10 核验结论（海外）：OpenRouter / Groq / Cloudflare / Mistral / Cerebras 的免费档只到中档开源模型（低于 V4.1），不收录；仅收录免费档能给到 V4.1 档或更强模型的 Gemini / NVIDIA NIM / Kiro。
+- 2026-10 核验后不收录：豆包（SuperCLUE 约第 5，低于 DeepSeek 旗舰，LMArena 未进第一梯队）、百度文心、腾讯混元、商汤、讯飞星火；海外 OpenRouter / Groq / Cloudflare / Mistral / Cerebras（免费档只到中档开源模型）。
 - 平台聚合型（SiliconFlow、ModelScope）自身不产模型，但托管多家第一梯队开源模型，仍保留。
 
 ## 高优先级
@@ -92,6 +92,16 @@
 - 当前免费内容：新开发者账号送 500 万 Tokens（30 天）；网页 / App 对话长期免费。
 - 使用范围：DeepSeek 开放平台 API。
 
+### Google Gemini（AI Studio）· 海外
+
+- key: `gemini`
+- type: `api-general`
+- 默认入口: `https://aistudio.google.com/`
+- 官方说明: `https://ai.google.dev/gemini-api/docs/rate-limits`
+- 当前免费内容：免费层覆盖 Gemini 3.x Flash / 2.5 Flash / Gemma 4 等前沿模型，无需信用卡；约 10 RPM / ~1500 RPD（以 AI Studio 控制台显示为准）。
+- 使用范围：Gemini API（原生 + OpenAI 兼容端点），可接入脚本 / 外部 Agent / IDE。
+- 卡点：免费层提示词可能被用于改进 Google 产品（敏感数据慎用）；国内访问可能需代理；超限即 429、无自动扣费。
+
 ## 中优先级
 
 ### Qoder CN
@@ -104,37 +114,20 @@
 - 🟢 新增（2026-10）：2026-09-18 起个人用户每日可在桌面端主动领取 100 通用 Credits（30 天有效，可跨天保留）；Qwen3.8-Flash 调用系数 0.0× 不耗 Credits。
 - 使用范围：Qoder CN IDE、JetBrains、QoderWork、CLI、QoderWake 和 Mobile 等端内能力。
 
-## 海外平台
-
-> 2026-10-20 核验。按 DeepSeek V4.1 同级严标，仅收录免费档能给到 V4.1 档或更强模型的平台。国内访问可能需代理；注意各平台免费层数据政策（部分会用提示词训练）。
-
-### Google Gemini（AI Studio）
-
-- key: `gemini`
-- type: `api-general`
-- priority: `high`
-- 默认入口: `https://aistudio.google.com/`
-- 官方说明: `https://ai.google.dev/gemini-api/docs/rate-limits`
-- 当前免费内容：免费层覆盖 Gemini 3.x Flash / 2.5 Flash / Gemma 4 等前沿模型，无需信用卡；约 10 RPM / ~1500 RPD（以 AI Studio 控制台显示为准）。
-- 使用范围：Gemini API（原生 + OpenAI 兼容端点），可接入脚本 / 外部 Agent / IDE。
-- 卡点：免费层提示词可能被用于改进 Google 产品（敏感数据慎用）；国内访问可能需代理；超限即 429、无自动扣费。
-
-### NVIDIA NIM（build.nvidia.com）
+### NVIDIA NIM（build.nvidia.com）· 海外
 
 - key: `nvidia-nim`
 - type: `api-general`
-- priority: `medium`
 - 默认入口: `https://build.nvidia.com/`
 - 官方说明: `https://build.nvidia.com/`
 - 当前免费内容：注册赠 1000 推理 Credits（企业邮箱可到 5000），40 RPM；托管 DeepSeek / GLM-5.3 / Qwen3.8 / Kimi 等第一梯队模型（及 Gemma / Nemotron），可用免费 Credits 调用。
 - 使用范围：OpenAI 兼容端点 `integrate.api.nvidia.com/v1`。
 - 卡点：Credits 为消耗型、不自动刷新；需手机验证。
 
-### Amazon Kiro
+### Amazon Kiro · 海外
 
 - key: `kiro`
 - type: `app-only`
-- priority: `medium`
 - 默认入口: `https://kiro.dev/`
 - 官方说明: `https://kiro.dev/pricing`
 - 当前免费内容：免费档 $0/月含 50 Credits/月（非试用、无需卡）；社交 / AWS Builder ID 首登再送 500 Credits。免费档可用 Claude Sonnet 4.5（前沿，>V4.1）+ 开源模型（Qwen3 Coder Next / DeepSeek 3.2 / MiniMax M2.1）；Opus 5 / GPT-5.6 等旗舰需付费。
@@ -144,13 +137,3 @@
 ## 作者邀请链接
 
 发行版当前为 BigModel 和 SiliconFlow 提供作者邀请链接；用户配置可替换。
-
-## 交付提醒
-
-回复用户时不要只说"注册送 token"。必须说明：
-
-1. 是 token、代金券、积分还是资源包。
-2. 能否用于 API。
-3. 是否能给任意 Agent 调用。
-4. 是否需要实名或下载专属 App/Agent。
-5. 如果是邀请奖励，双方各得什么，是否有有效期。

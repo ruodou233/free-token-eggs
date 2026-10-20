@@ -2,7 +2,7 @@
 
 Find worthwhile free LLM API credits and AI trials, with eligibility, expiry dates, and claim links checked.
 
-免费额度到处都是，找半天、领一圈，模型还不好用？这个 skill 帮你挑值得领的免费 AI token，查清条件、找到入口。太蠢的大模型不收录，吃点好的。
+免费额度到处都是，找半天、领一圈，模型还不好用？这个 skill 帮你挑值得领的免费 AI token，查清条件、找到入口。**只收 DeepSeek V4.1 同级（第一梯队）的模型**，国内外都覆盖，太蠢的大模型不收录。
 
 ## 今天想领哪种鸡蛋
 
@@ -13,7 +13,7 @@ Find worthwhile free LLM API credits and AI trials, with eligibility, expiry dat
 
 ## 默认入口
 
-当前高优先级平台、具体额度和有效期集中在 [`references/platforms.md`](references/platforms.md)，执行时实时核验。
+高优先级平台、具体额度和有效期集中在 [`references/platforms.md`](references/platforms.md)，执行时实时核验。
 
 ## 使用
 
@@ -21,17 +21,7 @@ Find worthwhile free LLM API credits and AI trials, with eligibility, expiry dat
 python3 scripts/open_free_token_sites.py --tier high
 ```
 
-只打开 API 额度：
-
-```bash
-python3 scripts/open_free_token_sites.py --category api
-```
-
-查看全部候选：
-
-```bash
-python3 scripts/open_free_token_sites.py --tier all
-```
+更多参数见 [`SKILL.md`](SKILL.md)。
 
 ## 使用自己的邀请链接
 
@@ -51,10 +41,10 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 ## 安装
 
 ```bash
-git clone https://github.com/ruodou233/free-token-eggs.git ~/.codex/skills/free-token-eggs
+git clone https://github.com/ruodou233/free-token-eggs.git ~/.workbuddy/skills/free-token-eggs
 ```
 
-也可克隆到 `~/.claude/skills/free-token-eggs`。
+也可用 `~/.codex/skills/` 或 `~/.claude/skills/`。
 
 ## License
 
