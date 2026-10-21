@@ -100,7 +100,7 @@
 - 官方说明: `https://ai.google.dev/gemini-api/docs/rate-limits`
 - 当前免费内容：免费层覆盖 Gemini 3.x Flash / 2.5 Flash / Gemma 4 等前沿模型，无需信用卡；约 10 RPM / ~1500 RPD（以 AI Studio 控制台显示为准）。
 - 使用范围：Gemini API（原生 + OpenAI 兼容端点），可接入脚本 / 外部 Agent / IDE。
-- 卡点：免费层提示词可能被用于改进 Google 产品（敏感数据慎用）；国内访问可能需代理；超限即 429、无自动扣费。
+- 卡点：免费层提示词可能被用于改进 Google 产品；国内访问可能需代理；超限即 429、无自动扣费。
 
 ## 中优先级
 
