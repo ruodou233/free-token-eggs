@@ -3,6 +3,7 @@
 > **它是什么**：用于判断现在有哪些 AI 免费 API 额度或应用积分值得领取的时效清单，不是社区信号库。
 > **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
 > **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消；Qoder CN 新增每日可领 100 通用 Credits；新增 DeepSeek 与海外平台 Gemini / NVIDIA NIM / Kiro。
+> **2026-11-16 局部更新**：ModelScope 改为魔粒计费；DeepSeek 新账号赠额在官方页找不到出处，移出清单；NVIDIA NIM 去掉无出处的 Credits 数，改按官方文档写；新增腾讯云 TokenHub、AMD Token Factory 中国站。
 
 ## 字段说明
 
@@ -15,7 +16,7 @@
 
 - 以最新权威榜单（SuperCLUE 综合榜 / LMArena 文本榜）为准：模型口碑须达到 **DeepSeek V4.1 同级**（第一梯队）才收录。
 - 2026-10 核验后不收录：豆包（SuperCLUE 约第 5，低于 DeepSeek 旗舰，LMArena 未进第一梯队）、百度文心、腾讯混元、商汤、讯飞星火；海外 OpenRouter / Groq / Cloudflare / Mistral / Cerebras（免费档只到中档开源模型）。
-- 平台聚合型（SiliconFlow、ModelScope）自身不产模型，但托管多家第一梯队开源模型，仍保留。
+- 平台聚合型（SiliconFlow、ModelScope、腾讯云 TokenHub、AMD Token Factory）自身不产模型，但托管多家第一梯队开源模型，仍保留。
 
 ## 高优先级
 
@@ -74,23 +75,26 @@
 - 使用范围：华北 2（北京）的实时推理。
 - 有效期：通常为 90 天，从开通、模型发布或申请通过三者中较晚的日期起算。
 
+### 腾讯云 TokenHub
+
+- key: `tokenhub`
+- type: `api-general`
+- 默认入口: `https://console.cloud.tencent.com/tokenhub/models`
+- 官方说明: `https://cloud.tencent.com/document/product/1823/130053`
+- 当前免费内容（2026-11 新增）：新人免费体验包，每个语言模型、多模态理解模型可各领 100 万 Tokens；在模型广场点「新用户福利免费体验」勾选领取，或首次调用时自动领取。托管 DeepSeek-V4-Pro、Kimi K3、GLM-5.3、MiniMax M3 等第一梯队模型。
+- 使用范围：TokenHub 在线推理 API。
+- 有效期：活动截至 2026-12-31；额度自领取起 1 年，过期作废。
+- 注：每个主账号每个模型限领一次，建议只领近期要用的模型；额度用完且未开后付费时服务自动停止，不扣费。
+
 ### ModelScope
 
 - key: `modelscope`
 - type: `api-general`
 - 默认入口: `https://www.modelscope.cn/my/myaccesstoken`
 - 官方说明: `https://modelscope.cn/docs/model-service/API-Inference/limits`
-- 当前免费内容：API Inference 免费；每账号每日总计 2000 次，单模型每日上限最高 500 次（DeepSeek-R1/V3 等大模型限 100 次）。
+- 当前免费内容（2026-11 核验）：API-Inference 改按魔粒扣减，轻量模型 0.5 / 主流模型 1 / 旗舰模型 2 魔粒/次，余额充足即可调用任意次数；每日登录送 200 魔粒、绑定阿里云再加 50 魔粒（均当日有效），验证邮箱、邀请好友等另得长期魔粒（90 天）。并发按平台压力动态限制。
 - 使用范围：带 API Inference 标识的开源模型。
-- 注：需绑定阿里云账号并完成实名。
-
-### DeepSeek
-
-- key: `deepseek`
-- type: `api-general`
-- 默认入口: `https://platform.deepseek.com/`
-- 当前免费内容：新开发者账号送 500 万 Tokens（30 天）；网页 / App 对话长期免费。
-- 使用范围：DeepSeek 开放平台 API。
+- 注：需绑定阿里云账号并完成实名；使用魔粒前需验证个人邮箱，规则见 `https://modelscope.cn/docs/magicube/intro`。
 
 ### Google Gemini（AI Studio）· 海外
 
@@ -114,15 +118,25 @@
 - 🟢 新增（2026-10）：2026-09-18 起个人用户每日可在桌面端主动领取 100 通用 Credits（30 天有效，可跨天保留）；Qwen3.8-Flash 调用系数 0.0× 不耗 Credits。
 - 使用范围：Qoder CN IDE、JetBrains、QoderWork、CLI、QoderWake 和 Mobile 等端内能力。
 
+### AMD Radeon Cloud Token Factory（中国站）
+
+- key: `amd-tokenfactory`
+- type: `api-general`
+- 默认入口: `https://developer.amd.com.cn/radeon/tokenfactory`
+- 官方说明: `https://amd-aim.github.io/radeon-cloud-docs/zh-cn/guides/token-factory/`
+- 当前免费内容（2026-11 新增）：Token Factory 免费调用、不消耗积分；每日用量上限按 pts 计，北京时间 0 点重置（典型限流：每账号 20 次/分钟，每个 API Key 并发 8）。托管 DeepSeek-V4.1-Flash、GLM-5.3-Flash、Qwen3.8-27B、MiMo-V2.6-Flash 等，模型由平台不定期调整。
+- 使用范围：OpenAI 兼容端点 `https://developer.amd.com.cn/radeon/api/v1`，也支持 Anthropic Messages 接口（可接 Claude Code）。
+- 卡点：只在中国站提供，Beta；官方限试用和开发，不适合生产；超限返回 429。
+
 ### NVIDIA NIM（build.nvidia.com）· 海外
 
 - key: `nvidia-nim`
 - type: `api-general`
 - 默认入口: `https://build.nvidia.com/`
-- 官方说明: `https://build.nvidia.com/`
-- 当前免费内容：注册赠 1000 推理 Credits（企业邮箱可到 5000），40 RPM；托管 DeepSeek / GLM-5.3 / Qwen3.8 / Kimi 等第一梯队模型（及 Gemma / Nemotron），可用免费 Credits 调用。
+- 官方说明: `https://docs.api.nvidia.com/nim/docs/product`
+- 当前免费内容：加入免费的 NVIDIA Developer Program 即可免费调用 NIM API 端点，40 RPM；托管 DeepSeek / GLM-5.3 / Qwen3.8 / Kimi 等第一梯队模型（及 Gemma / Nemotron）。
 - 使用范围：OpenAI 兼容端点 `integrate.api.nvidia.com/v1`。
-- 卡点：Credits 为消耗型、不自动刷新；需手机验证。
+- 卡点：官方限定用于原型开发和测试，上生产需 NVIDIA AI Enterprise 授权；需手机验证。
 
 ### Amazon Kiro · 海外
 

@@ -57,6 +57,14 @@ SITES = [
         "note": "百炼新人模型免费额度入口。",
     },
     {
+        "key": "tokenhub",
+        "name": "腾讯云 TokenHub",
+        "category": "api",
+        "tier": "high",
+        "url": "https://console.cloud.tencent.com/tokenhub/models",
+        "note": "模型广场右上角「新用户福利免费体验」领取；未登录会跳转登录页。",
+    },
+    {
         "key": "modelscope",
         "name": "ModelScope",
         "category": "api",
@@ -73,12 +81,12 @@ SITES = [
         "note": "个人体验版入口。",
     },
     {
-        "key": "deepseek",
-        "name": "DeepSeek",
+        "key": "amd-tokenfactory",
+        "name": "AMD Token Factory（中国站）",
         "category": "api",
-        "tier": "high",
-        "url": "https://platform.deepseek.com/",
-        "note": "DeepSeek 开放平台入口。",
+        "tier": "medium",
+        "url": "https://developer.amd.com.cn/radeon/tokenfactory",
+        "note": "每日重置的免费 API；登录后在页面顶部复制 API Key。",
     },
     {
         "key": "gemini",
