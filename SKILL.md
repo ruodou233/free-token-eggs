@@ -43,7 +43,7 @@ python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 
 每个平台说清能拿来做什么、当前免费内容、入口、卡点和核验日期，形式按数量自选。
 
-金额、Token 数和有效期只使用刚核验的当前值。注册、登录、填写、领取、切页都由 Agent 推到能力边界为止再交还用户。
+金额、Token 数和有效期只使用刚核验的当前值。
 
 ## 维护
 
