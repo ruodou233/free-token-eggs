@@ -148,16 +148,27 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Open curated AI free-credit pages.")
     parser.add_argument("--config", help="JSON file mapping site keys to referral URLs.")
     parser.add_argument("--category", choices=["all", "api", "app"], default="all")
-    parser.add_argument("--tier", choices=["high", "medium", "all"], default="high")
+    parser.add_argument("--tier", choices=["high", "medium", "all"], help="Default: high; all when --only is given.")
+    parser.add_argument("--only", help="Comma-separated site keys (e.g. kimi,coze).")
     parser.add_argument("--dry-run", action="store_true", help="Print URLs without opening them.")
     args = parser.parse_args()
 
     links, author_link_keys = load_links(args.config)
+    only_keys = None
+    if args.only:
+        only_keys = {key.strip() for key in args.only.split(",") if key.strip()}
+        unknown = sorted(only_keys - {site["key"] for site in SITES})
+        if unknown:
+            print(f"未知 key：{', '.join(unknown)}。合法 key：{', '.join(site['key'] for site in SITES)}")
+            return 1
+    tier = args.tier or ("all" if only_keys else "high")
     selected = []
     for site in SITES:
+        if only_keys is not None and site["key"] not in only_keys:
+            continue
         if args.category != "all" and site["category"] != args.category:
             continue
-        if args.tier != "all" and site["tier"] != args.tier:
+        if tier != "all" and site["tier"] != tier:
             continue
         url = links.get(site["key"], site["url"])
         selected.append((site, url))

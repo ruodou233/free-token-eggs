@@ -16,11 +16,13 @@ description: |
 1. 读取平台清单，按用户需要选择 API 通用额度或应用内积分。
 2. 打开前从清单里的官方页面核验当前额度和有效期；旧活动不沿用。
 3. 清单按优先级分高/中两段，标题带「· 海外」的是海外平台；收录门槛为 DeepSeek V4.1 同级（第一梯队），海外还需提示访问代理与免费层数据政策。
-4. 用户要直接打开时运行：
+4. 用户要直接打开时，先预览再征得同意：
 
 ```bash
-python3 scripts/open_free_token_sites.py --tier high
+python3 scripts/open_free_token_sites.py --tier high --dry-run
 ```
+
+把 dry-run 的站点名、URL、作者邀请提示转给用户，同意后再去掉 `--dry-run`。
 
 常用参数：
 
@@ -29,6 +31,8 @@ python3 scripts/open_free_token_sites.py --category api
 python3 scripts/open_free_token_sites.py --category app
 python3 scripts/open_free_token_sites.py --tier all
 python3 scripts/open_free_token_sites.py --dry-run
+# 只开指定站点（不传 --tier 时不按优先级过滤；与 --category 取交集）
+python3 scripts/open_free_token_sites.py --only kimi,coze
 python3 scripts/open_free_token_sites.py --config ~/.free-token-eggs-links.json
 ```
 

@@ -4,6 +4,7 @@
 > **本轮核验**：2026-10-20。额度、活动和有效期执行时从所列官方页面再看一遍。
 > **相较 2026-09-04 版的变化**：智谱新增 GLM-4-Flash / GLM-4.7-Flash 永久免费；SiliconFlow 小模型永久免费已取消；Qoder CN 新增每日可领 100 通用 Credits；新增 DeepSeek 与海外平台 Gemini / NVIDIA NIM / Kiro。
 > **2026-11-16 局部更新**：ModelScope 改为魔粒计费；DeepSeek 新账号赠额在官方页找不到出处，移出清单；NVIDIA NIM 去掉无出处的 Credits 数，改按官方文档写；新增腾讯云 TokenHub、AMD Token Factory 中国站。
+> **2026-11-17 局部更新**：Kiro 对照官方定价页和模型页：500 Credits 不是首登赠送而是首次升级 Pro 的试用额度，免费档开源模型补全。
 
 ## 字段说明
 
@@ -144,7 +145,7 @@
 - type: `app-only`
 - 默认入口: `https://kiro.dev/`
 - 官方说明: `https://kiro.dev/pricing`
-- 当前免费内容：免费档 $0/月含 50 Credits/月（非试用、无需卡）；社交 / AWS Builder ID 首登再送 500 Credits。免费档可用 Claude Sonnet 4.5（前沿，>V4.1）+ 开源模型（Qwen3 Coder Next / DeepSeek 3.2 / MiniMax M2.1）；Opus 5 / GPT-5.6 等旗舰需付费。
+- 当前免费内容：免费档 $0/月含 50 Credits/月（长期免费、无需卡），可用 Claude Sonnet 4.5（前沿，>V4.1）和开源模型（DeepSeek 3.2、GLM-5、MiniMax M2.5 / M2.1、Qwen3 Coder Next）；Opus、GPT-5.6 等旗舰需付费。首次升级 Pro 时当月剩余时间免费，另送 500 试用 Credits（12 个月内用完），需绑卡。
 - 使用范围：Kiro IDE / CLI / 网页 / 移动端的 spec 驱动 agentic 编程；app-only，非通用 API key。
 - 卡点：免费档仅 50 Credits/月，量很小；旗舰模型锁付费档；GovCloud 无免费档。
 
